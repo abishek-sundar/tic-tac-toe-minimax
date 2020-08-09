@@ -21,7 +21,6 @@ while not gameOver:
             print()
             board = cpuMove(board,cpu,user)
         gameOver, winner = isOver(board)
-        print (getLegalMoves(board))
         if gameOver:
             if winner == '-':
                 print ("Game tied!")
