@@ -27,6 +27,8 @@ def minimax(board, cpu, user, player, alpha, beta):
                 bestMove = move
             alpha = max(alpha, value)
             board = undoMove(board,move)
+            if beta <= alpha:
+                break
         return (maxEval, bestMove, 0, 0)
     elif player == user:
         minEval = 100
@@ -36,4 +38,6 @@ def minimax(board, cpu, user, player, alpha, beta):
             minEval = min(minEval, value)
             beta = min(beta,value)
             board = undoMove(board,move)
+            if beta <= alpha:
+                break
         return (minEval, bestMove, 0, 0)
